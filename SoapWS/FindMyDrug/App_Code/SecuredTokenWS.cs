@@ -11,11 +11,14 @@ public class SecuredTokenWS : System.Web.Services.Protocols.SoapHeader
     public string Username { get; set; }
     public string Password { get; set; }
     public string AuthenticationToken { get; set; }
+
+    string ws_username = System.Configuration.ConfigurationManager.AppSettings["Username"].ToString();
+    string ws_password = System.Configuration.ConfigurationManager.AppSettings["Password"].ToString();
     public bool IsUserCredentialsValid(string Username, string Paswsword)
     {
         //check credential from my appsettings here
         // if ok return true else return false
-        if (Username == "admin" && Password == "admin")
+        if (Username == ws_username && Password == ws_password)
             return true;
         else
             return false;

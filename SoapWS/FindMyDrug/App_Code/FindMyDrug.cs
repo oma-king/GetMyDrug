@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using Dapper;
 
 /// <summary>
 /// Summary description for FindMyDrug
@@ -29,7 +33,7 @@ public class FindMyDrug : System.Web.Services.WebService
             return "403.2 Forbidden - Unauthenticated !!!";
 
         // Create and store the Authentication Token before returning it
-        string token = Guid.NewGuid().ToString();
+        string token = TokenCipher.Encrypt(Guid.NewGuid().ToString(), "wdGL6HSa0Vn8A9sa6KyyR728WgQzpc2t");
         HttpRuntime.Cache.Add(
             token,
             SoapHeader.Username,
@@ -39,38 +43,58 @@ public class FindMyDrug : System.Web.Services.WebService
             System.Web.Caching.CacheItemPriority.NotRemovable,
             null
             );
-        return TokenCipher.Encrypt(token, "wdGL6HSa0Vn8A9sa6KyyR728WgQzpc2t");
+        return token;
 
+    }
+   
+    [WebMethod]
+    [System.Web.Services.Protocols.SoapHeader("SoapHeader")]
+   
+    public List<Pharmacy> FindMyDrugInPharmacies(string DrugName, string Region)
+    {
+        List<Pharmacy> results;
+        if(DrugName == null || DrugName == "" || Region == null || Region == "")
+            return results = null;
+
+        if (SoapHeader == null)
+            return results = null;
+        if (!SoapHeader.IsUserCredentialsValid(SoapHeader))
+            return results=null;
+
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["GetMyDrugConnection"].ConnectionString))
+        {
+            if (db.State == ConnectionState.Closed)
+                db.Open();
+            var procedure = "_Proc_ListMyDrugInPharmacies";
+            var values = new { DrugName = DrugName, Region = Region };
+            results = db.Query<Pharmacy>(procedure, values, commandType: CommandType.StoredProcedure).ToList();
+            return results;
+        }
     }
 
     [WebMethod]
     [System.Web.Services.Protocols.SoapHeader("SoapHeader")]
-    public string Operation(string token)
+
+    public List<Pharmacy> CalculateItineraryToPharmacy(string DrugName, string Region)
     {
-        if (SoapHeader == null)
-            return "403.0 Forbidden - Unauthenticated !!!";
-        if (string.IsNullOrEmpty(SoapHeader.Username) || string.IsNullOrEmpty(SoapHeader.Password))
-            return "403.1 Forbidden - Unauthenticated !!!";
-
-        // check if credential are valid
-        if (!SoapHeader.IsUserCredentialsValid(SoapHeader.Username, SoapHeader.Password))
-            return "403.2 Forbidden - Unauthenticated !!!";
-
-        return TokenCipher.Decrypt(token, "wdGL6HSa0Vn8A9sa6KyyR728WgQzpc2t");
-    }
-
-        [WebMethod]
-    [System.Web.Services.Protocols.SoapHeader("SoapHeader")]
-    public string HelloWorld(string User, string Pass)
-    { 
+        List<Pharmacy> results;
+        if (DrugName == null || DrugName == "" || Region == null || Region == "")
+            return results = null;
 
         if (SoapHeader == null)
-            return "403 forbidden - Unauthenticated";
+            return results = null;
+        if (!SoapHeader.IsUserCredentialsValid(SoapHeader))
+            return results = null;
 
-        if(!SoapHeader.IsUserCredentialsValid(SoapHeader))
-            return "403 forbidden - Unauthenticated !!!";
-
-        return "Hello " + HttpRuntime.Cache[SoapHeader.AuthenticationToken];
+        using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["GetMyDrugConnection"].ConnectionString))
+        {
+            if (db.State == ConnectionState.Closed)
+                db.Open();
+            var procedure = "_Proc_ListMyDrugInPharmacies";
+            var values = new { DrugName = DrugName, Region = Region };
+            results = db.Query<Pharmacy>(procedure, values, commandType: CommandType.StoredProcedure).ToList();
+            return results;
+        }
     }
 
 }
