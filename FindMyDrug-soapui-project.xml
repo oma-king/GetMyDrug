@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c4e7cef3-2616-4b19-a820-07d653529a57" activeEnvironment="Default" name="FindMyDrug" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e7777cec-c4d5-4583-9120-e41eac7de1d7" wsaVersion="NONE" name="FindMyDrugSoap12" type="wsdl" bindingName="{http://tempuri.org/}FindMyDrugSoap12" soapVersion="1_2" anonymous="optional" definition="https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint></con:endpoints><con:operation id="30c9fac0-18ac-4d82-b78d-a98c868e0106" isOneWay="false" action="http://tempuri.org/Authentication" name="Authentication" bindingOperationName="Authentication" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="42c66f44-887b-4aba-a77f-23568a10738f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>?</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>?</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <tem:Authentication/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/FindMyDrugSoap/AuthenticationRequest"/></con:call></con:operation><con:operation id="ef480fed-1c04-4992-ae5b-8af68381d125" isOneWay="false" action="http://tempuri.org/CalculateItineraryToPharmacy" name="CalculateItineraryToPharmacy" bindingOperationName="CalculateItineraryToPharmacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7aa0add5-94e2-42d2-9f78-12622f0d268f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>?</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>?</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <tem:CalculateItineraryToPharmacy>\r
+         <!--Optional:-->\r
+         <tem:MyLatitude>?</tem:MyLatitude>\r
+         <!--Optional:-->\r
+         <tem:Mylongitude>?</tem:Mylongitude>\r
+         <!--Optional:-->\r
+         <tem:PhLatitude>?</tem:PhLatitude>\r
+         <!--Optional:-->\r
+         <tem:Phlongitude>?</tem:Phlongitude>\r
+      </tem:CalculateItineraryToPharmacy>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/FindMyDrugSoap/CalculateItineraryToPharmacyRequest"/></con:call></con:operation><con:operation id="4d59941c-b999-4a48-a210-50cdb3a78ecf" isOneWay="false" action="http://tempuri.org/FindMyDrugInPharmacies" name="FindMyDrugInPharmacies" bindingOperationName="FindMyDrugInPharmacies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5fec92be-5fa3-4cc9-8d66-efa19775f910" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>?</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>?</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <tem:FindMyDrugInPharmacies>\r
+         <!--Optional:-->\r
+         <tem:DrugName>?</tem:DrugName>\r
+         <!--Optional:-->\r
+         <tem:Region>?</tem:Region>\r
+      </tem:FindMyDrugInPharmacies>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/FindMyDrugSoap/FindMyDrugInPharmaciesRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="86a5c06f-a683-4cc9-82a4-6ddd3c7af3fb" wsaVersion="NONE" name="FindMyDrugSoap" type="wsdl" bindingName="{http://tempuri.org/}FindMyDrugSoap" soapVersion="1_1" anonymous="optional" definition="https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx?wsdl"><con:part><con:url>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Authentication">
+        <s:complexType/>
+      </s:element>
+      <s:element name="AuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecuredTokenWS" type="tns:SecuredTokenWS"/>
+      <s:complexType name="SecuredTokenWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenticationToken" type="s:string"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:element name="FindMyDrugInPharmacies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DrugName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindMyDrugInPharmaciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindMyDrugInPharmaciesResult" type="tns:ArrayOfPharmacy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPharmacy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pharmacy" nillable="true" type="tns:Pharmacy"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pharmacy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DrugName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PharmacyName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Latitude" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateItineraryToPharmacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MyLatitude" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Mylongitude" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhLatitude" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Phlongitude" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateItineraryToPharmacyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateItineraryToPharmacyResult" type="tns:Itinerary"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Itinerary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="totalLength" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="totalSeconds" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication"/>
+  </wsdl:message>
+  <wsdl:message name="AuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AuthenticationSecuredTokenWS">
+    <wsdl:part name="SecuredTokenWS" element="tns:SecuredTokenWS"/>
+  </wsdl:message>
+  <wsdl:message name="FindMyDrugInPharmaciesSoapIn">
+    <wsdl:part name="parameters" element="tns:FindMyDrugInPharmacies"/>
+  </wsdl:message>
+  <wsdl:message name="FindMyDrugInPharmaciesSoapOut">
+    <wsdl:part name="parameters" element="tns:FindMyDrugInPharmaciesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="FindMyDrugInPharmaciesSecuredTokenWS">
+    <wsdl:part name="SecuredTokenWS" element="tns:SecuredTokenWS"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateItineraryToPharmacySoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateItineraryToPharmacy"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateItineraryToPharmacySoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateItineraryToPharmacyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateItineraryToPharmacySecuredTokenWS">
+    <wsdl:part name="SecuredTokenWS" element="tns:SecuredTokenWS"/>
+  </wsdl:message>
+  <wsdl:portType name="FindMyDrugSoap">
+    <wsdl:operation name="Authentication">
+      <wsdl:input message="tns:AuthenticationSoapIn"/>
+      <wsdl:output message="tns:AuthenticationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindMyDrugInPharmacies">
+      <wsdl:input message="tns:FindMyDrugInPharmaciesSoapIn"/>
+      <wsdl:output message="tns:FindMyDrugInPharmaciesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateItineraryToPharmacy">
+      <wsdl:input message="tns:CalculateItineraryToPharmacySoapIn"/>
+      <wsdl:output message="tns:CalculateItineraryToPharmacySoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FindMyDrugSoap" type="tns:FindMyDrugSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authentication">
+      <soap:operation soapAction="http://tempuri.org/Authentication" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:AuthenticationSecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMyDrugInPharmacies">
+      <soap:operation soapAction="http://tempuri.org/FindMyDrugInPharmacies" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:FindMyDrugInPharmaciesSecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateItineraryToPharmacy">
+      <soap:operation soapAction="http://tempuri.org/CalculateItineraryToPharmacy" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:CalculateItineraryToPharmacySecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FindMyDrugSoap12" type="tns:FindMyDrugSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authentication">
+      <soap12:operation soapAction="http://tempuri.org/Authentication" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:AuthenticationSecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMyDrugInPharmacies">
+      <soap12:operation soapAction="http://tempuri.org/FindMyDrugInPharmacies" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:FindMyDrugInPharmaciesSecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateItineraryToPharmacy">
+      <soap12:operation soapAction="http://tempuri.org/CalculateItineraryToPharmacy" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:CalculateItineraryToPharmacySecuredTokenWS" part="SecuredTokenWS" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FindMyDrug">
+    <wsdl:port name="FindMyDrugSoap" binding="tns:FindMyDrugSoap">
+      <soap:address location="https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="FindMyDrugSoap12" binding="tns:FindMyDrugSoap12">
+      <soap12:address location="https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint></con:endpoints><con:operation id="8fec751d-c38a-442c-94c5-aa5058f11b79" isOneWay="false" action="http://tempuri.org/Authentication" name="Authentication" bindingOperationName="Authentication" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0defae6a-af70-493b-ad20-66666403e89d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>adminws</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>R@4Ck5g5JjFGLMcRCFGr@w!D?qC**LXK3?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>?</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <tem:Authentication/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Authentication"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8258618a-4f41-4f0b-b925-d4447536aa0c" isOneWay="false" action="http://tempuri.org/CalculateItineraryToPharmacy" name="CalculateItineraryToPharmacy" bindingOperationName="CalculateItineraryToPharmacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="09333833-e3f1-4fb1-bc67-1556f4e11d3f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>?</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>IoFX6gSKihHTyfUPqrNDALpdXDsdykHs/5Oqa5gt7n5dPN7aaTB55mn+RX64ftxN8xRWj0Tt4YPEC4OUPyeWwPm6AOQkmaE/aAhl7S4dBHfWRY7wItOYFWVPWMEHj7tnncUTRJ0b+0R+OEcnyXCN8umsHPMhU7jigT5nn+rw/Kg=</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <tem:CalculateItineraryToPharmacy>\r
+         <!--Optional:-->\r
+         <tem:MyLatitude>36.8638505</tem:MyLatitude>
+         <!--Optional:-->
+         <tem:Mylongitude>10.1815426</tem:Mylongitude>
+         <!--Optional:-->\r
+         <tem:PhLatitude>36.8064948</tem:PhLatitude>\r
+         <!--Optional:-->\r
+         <tem:Phlongitude>10.1815316</tem:Phlongitude>\r
+      </tem:CalculateItineraryToPharmacy>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculateItineraryToPharmacy"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7d2a652d-8487-4dae-8e20-e7103eb7e3f3" isOneWay="false" action="http://tempuri.org/FindMyDrugInPharmacies" name="FindMyDrugInPharmacies" bindingOperationName="FindMyDrugInPharmacies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f9efc7ca-13ef-4af3-bb34-32550e6385bf" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://h360.vocalcom.tn/GetMyDrug/SoapWS/FindMyDrug.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header>\r
+      <tem:SecuredTokenWS>\r
+         <!--Optional:-->\r
+         <tem:Username>?</tem:Username>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:AuthenticationToken>IoFX6gSKihHTyfUPqrNDALpdXDsdykHs/5Oqa5gt7n5dPN7aaTB55mn+RX64ftxN8xRWj0Tt4YPEC4OUPyeWwPm6AOQkmaE/aAhl7S4dBHfWRY7wItOYFWVPWMEHj7tnncUTRJ0b+0R+OEcnyXCN8umsHPMhU7jigT5nn+rw/Kg=</tem:AuthenticationToken>\r
+      </tem:SecuredTokenWS>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <tem:FindMyDrugInPharmacies>\r
+         <!--Optional:-->\r
+         <tem:DrugName>GRIP</tem:DrugName>\r
+         <!--Optional:-->\r
+         <tem:Region>TUNIS</tem:Region>\r
+      </tem:FindMyDrugInPharmacies>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/FindMyDrugInPharmacies"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

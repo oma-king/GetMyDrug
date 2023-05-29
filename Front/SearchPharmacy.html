@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recherche de pharmacies</title>
+  <style>
+    body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+form {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#searchResults {
+  margin-top: 20px;
+}
+
+.pharmacy {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pharmacy h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.pharmacy p {
+  margin: 5px 0;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="SearchMyPharmacy.js"></script>
+  </script>
+</head>
+<body>
+  <h1>Recherche de pharmacies</h1>
+  <form>
+    <label for="drugName">Nom du médicament :</label>
+    <input type="text" id="drugName" name="drugName" required><br>
+
+    <label for="region">Région:</label>
+    <select id="region" onchange="PharmaciesByRegion();">
+      <option value="---" selected="selected">---</option>
+      <option value="tunis">Tunis</option>
+      <option value="Ariana">Ariana</option>
+      <option value="Béja">Béja</option>
+      <option value="Ben Arous">Ben Arous</option>
+      <option value="Bizerte">Bizerte</option>
+      <option value="Gabès">Gabès</option>
+      <option value="Gafsa">Gafsa</option>
+      <option value="Jendouba">Jendouba</option>
+      <option value="Kairouan">Kairouan</option>
+      <option value="Kasserine">Kasserine</option>
+      <option value="Kébili">Kébili</option>
+      <option value="Le Kef">Le Kef</option>
+      <option value="Mahdia">Mahdia</option>
+      <option value="La Manouba">La Manouba</option>
+      <option value="Médenine">Médenine</option>
+      <option value="Monastir">Monastir</option>
+      <option value="Nabeul">Nabeul</option>
+      <option value="Sfax">Sfax</option>
+      <option value="Sidi Bouzid">Sidi Bouzid</option>
+      <option value="Siliana">Siliana</option>
+      <option value="Sousse">Sousse</option>
+      <option value="Tataouine">Tataouine</option>
+      <option value="Tozeur">Tozeur</option>
+      <option value="Zaghouan">Zaghouan</option>
+    </select>
+    <button type="button" onclick="soapAuth();">Rechercher</button>
+  </form>
+  <div id="countPharmaciesResults"></div>
+  <div id="searchResults"></div>
+</body>
+</html>
